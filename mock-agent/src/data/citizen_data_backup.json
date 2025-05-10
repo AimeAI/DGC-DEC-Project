@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "data": {
+    "fullName": "John Alistair Doe",
+    "dateOfBirth": "1985-03-15",
+    "socialInsuranceNumber": "987-654-321",
+    "driversLicenseNumber": "D1234-56789-00000",
+    "healthCardNumber": "9876543210 BC",
+    "permanentAddress": {
+      "street": "456 Oak Avenue",
+      "city": "Vancouver",
+      "province": "BC",
+      "postalCode": "V6B 1A2",
+      "country": "Canada"
+    },
+    "status": "Citizen",
+    "emergencyContacts": [
+      {
+        "name": "Jane Mary Doe",
+        "relationship": "Spouse",
+        "phone": "555-0202",
+        "email": "jane.doe@example.com"
+      },
+      {
+        "name": "Robert Smith",
+        "relationship": "Friend",
+        "phone": "555-0303"
+      }
+    ],
+    "profilePictureUrl": "https://via.placeholder.com/150/007bff/FFFFFF?text=JD"
+  },
+  "timestamp": "2025-05-10T05:57:46.666Z"
+}
