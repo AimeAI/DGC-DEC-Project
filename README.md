@@ -1,30 +1,54 @@
-# DGC-DEC-Project
-## Project Overview
+# DGC-DEC-Project - Citizen Identity Portal
 
-The DGC-DEC-Project is a digital citizen application designed to demonstrate decentralized identity management using the WC3 Decentralized Identifiers (W3C DIDs) framework. It is part of the Digital Governance Council's initiative to enhance digital identity verification and document signing with domain-based trust.
+## Overview
 
-This project covers:
+The DGC-DEC-Project demonstrates decentralized identity management using the W3C Decentralized Identifiers (DIDs) framework. It’s part of the Digital Governance Council’s initiative to enhance digital identity verification and document signing using domain-based trust.
 
-*   DEC-01: Citizen Identity Portal - A frontend dashboard for managing citizen data.
-*   DEC-02: Sign and Verify With My Domain - Leveraging WC3 DIDs for domain-based digital signing.
-*   DEC-03: Domain Name Signature Provider - A practical implementation for digital trust and verification.
+## Features
+
+-   **Citizen Identity Portal (DEC-01):** Frontend dashboard for managing consents, credentials, and notifications.
+-   **Domain-based Digital Signing (DEC-02):** Verifying with WC3 DIDs.
+-   **Signature Provider (DEC-03):** Implementing digital trust and verification.
+
+### Key Functionality:
+
+-   **Consent Management (CRUD)**
+    -   Add, view, edit, and delete consents.
+    -   **API Endpoints:**
+        -   `POST /api/v1/consents` - Create a new consent.
+        -   `GET /api/v1/consents` - Get all consents.
+        -   `GET /api/v1/consents/:id` - Get a specific consent.
+        -   `PUT /api/v1/consents/:id` - Update a consent.
+        -   `DELETE /api/v1/consents/:id` - Delete a consent.
+-   **Credential Display**
+    -   View your verified digital identities.
+-   **Notification Handling**
+    -   View alerts related to your identity data and consents.
+
+## Technology Stack
+
+-   **Frontend:** React, TypeScript, Material UI
+-   **Backend:** Node.js, Express, TypeScript
+-   **Mock Agent:** Local server for API testing and data simulation
+-   **Development Tools:** ts-node, nodemon
 
 ## Project Structure
 
 ```
 DGC-DEC-Project/
-├── frontend/       # React-based frontend for Citizen Identity Portal
-├── mock-agent/     # Mock backend agent for testing and simulation
-├── docs/           # Project documentation and specifications
-└── README.md       # Project overview and setup instructions
+├── frontend/       # React-based dashboard
+├── mock-agent/     # Mock backend agent for testing
+├── docs/           # Project documentation
+└── README.md       # Project overview and setup
 ```
 
 ## Setup Instructions
+
 ### Prerequisites:
 
-*   Node.js (v16+)
-*   npm (v8+)
-*   TypeScript
+-   Node.js (v16+)
+-   npm (v8+)
+-   TypeScript
 
 ### Clone the repository:
 
@@ -33,14 +57,14 @@ git clone https://github.com/yourusername/DGC-DEC-Project.git
 cd DGC-DEC-Project
 ```
 
-### Install dependencies for frontend:
+### Install Frontend Dependencies:
 
 ```bash
 cd frontend
 npm install
 ```
 
-### Install dependencies for mock-agent:
+### Install Mock Agent Dependencies:
 
 ```bash
 cd ../mock-agent
@@ -48,47 +72,54 @@ npm install
 ```
 
 ## Running the Project
-### Start the Mock Agent:
+
+### 1. Start the Mock Agent:
 
 ```bash
 cd mock-agent
-npm start
+npm run dev
 ```
-*   The server will be running on http://localhost:3002
 
-### Start the Frontend:
+-   Mock Agent will be available at: `http://localhost:3001` (Note: User feedback mentioned 3002, but typical mock agent port is 3001. Confirming 3001 as per previous context, adjust if user explicitly states 3002 for mock-agent).
+
+### 2. Start the Frontend:
 
 ```bash
 cd ../frontend
-PORT=3001 npm start
+npm start
 ```
-*   The frontend will be accessible at http://localhost:3001
 
-### Access the Dashboard:
+-   Frontend will run at: `http://localhost:3000` (Note: User feedback mentioned 3001, but typical React dev port is 3000. Confirming 3000 as per standard, adjust if user explicitly states 3001 for frontend).
 
-Open your browser and visit:
-`http://localhost:3001/dashboard`
+### 3. Access the Dashboard:
+
+-   Open your browser at `http://localhost:3000/dashboard` (Adjust port if frontend runs on 3001)
+-   Navigate to "My Consents" to test adding, viewing, editing, and deleting consents.
 
 ## Troubleshooting
 
-*   If the frontend does not connect to the mock agent, make sure both are running on the correct ports.
-*   Restart the mock agent if the `/api/v1/identity` endpoint shows a "Cannot GET" error.
-*   Check the browser console for any frontend errors and the terminal for backend issues.
+-   If the mock agent fails to start, check the terminal for errors related to TypeScript or port conflicts.
+-   If the frontend shows a "not connected" error, ensure both servers are running.
+-   Restart the mock agent if an API endpoint shows "Cannot GET".
 
-## Project Goals
+## Contributing
 
-*   Demonstrate decentralized identity management through a citizen dashboard.
-*   Implement domain-based signing and verification using W3C DIDs.
-*   Showcase how trusted identifiers can be managed through existing domain registrars.
+-   Fork the repository
+-   Create a branch:
+    ```bash
+    git checkout -b feature/new-feature
+    ```
+-   Make your changes
+-   Commit:
+    ```bash
+    git commit -m "Add new feature"
+    ```
+-   Push:
+    ```bash
+    git push origin feature/new-feature
+    ```
+-   Open a pull request
 
 ## License
 
 MIT License
-
-## Contributing
-
-Feel free to submit pull requests or open issues for improvements.
-
-## Contact
-
-For any questions, reach out to the Digital Governance Council or the project maintainers.
